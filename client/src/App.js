@@ -1,5 +1,13 @@
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
+
+const callAPI = () => {
+  axios.get("http://localhost:9000/testAPI").then((data) => {
+    //this console.log will be in our frontend console
+  console.log(data)
+  })
+}
 
 function App() {
   return (
@@ -17,6 +25,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={callAPI}>Make API Call</button>
       </header>
     </div>
   );
